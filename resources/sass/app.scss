@@ -1,0 +1,127 @@
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/preflight";
+ */
+@tailwind preflight;
+
+/**
+ * This injects any component classes registered by plugins.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/components";
+ */
+@tailwind components;
+
+/**
+ * Here you would add any of your custom component classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
+ * override them.
+ *
+ * Example:
+ *
+ * .btn { ... }
+ * .form-input { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "components/buttons";
+ * @import "components/forms";
+ */
+
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/utilities";
+ */
+@tailwind utilities;
+
+/**
+ * Here you would add any custom utilities you need that don't come out of the
+ * box with Tailwind.
+ *
+ * Example :
+ *
+ * .bg-pattern-graph-paper { ... }
+ * .skew-45 { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "utilities/background-patterns";
+ * @import "utilities/skew-transforms";
+ */
+.header {
+  @apply bg-grey-lighter flex flex-row flex-wrap items-center content-center justify-between py-3 px-4 text-grey-darkest;
+  }
+
+.menu {
+  @apply flex flex-row flex-wrap items-center content-center justify-around;
+  * {
+    @apply mx-2;
+  }
+}
+.list{
+  @apply flex flex-col flex-wrap items-center content-center;
+  .card{
+    @apply max-w-sm rounded overflow-hidden shadow-lg mx-4 my-4 w-full;
+    .card-header{
+      @apply bg-grey-lighter text-sm leading-none border-b border-grey px-4 py-2 flex flex-row flex-wrap items-center content-center justify-between text-grey-darker;
+    }
+    .card-body{
+      @apply text-grey-darkest px-4 py-2;
+      .card-title{
+        @apply text-xl font-semibold text-grey-darkest leading-loose;
+      }
+    }
+    .card-footer{
+      @apply flex flex-row flex-wrap items-center content-center justify-between px-8 py-4 border-t border-grey;
+      .btn{
+        @apply text-sm;
+      }
+    }
+  }
+}
+
+.btn {
+  @apply font-bold py-2 px-4 rounded border-solid border;
+  text-decoration: none;
+}
+
+.btn-primary {
+  @apply bg-transparent text-blue border-blue;
+}
+.btn-primary:hover {
+  @apply bg-blue text-white;
+}
+.btn-secondary {
+  @apply bg-transparent text-grey-darkest border-grey-darkest;
+}
+
+.btn-secondary:hover {
+  @apply bg-grey-darkest text-white;
+}
+.btn-success {
+  @apply bg-transparent text-green-dark border-green-dark;
+}
+
+.btn-success:hover {
+  @apply bg-green-dark text-white;
+}
+
+.btn-destroy {
+  @apply bg-transparent text-red-dark border-red-dark;
+}
+
+.btn-destroy:hover {
+  @apply bg-red-dark text-white;
+}
