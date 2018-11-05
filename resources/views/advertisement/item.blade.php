@@ -15,7 +15,7 @@
         <div class="controls">
             @can('update', $advertisement)
                 <a href="{{route('advertisements.edit', ['advertisement' => $advertisement->id])}}" class="btn btn-success">Edit</a>
-                <form action="{{route('advertisements.edit', ['advertisement' => $advertisement->id])}}"
+                <form action="{{route('advertisements.destroy', ['advertisement' => $advertisement->id])}}"
                       method="POST">
                     @csrf
                     @method('DELETE')

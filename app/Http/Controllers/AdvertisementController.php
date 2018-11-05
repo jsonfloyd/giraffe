@@ -93,7 +93,8 @@ class AdvertisementController extends Controller
      */
     public function update(Request $request, Advertisement $advertisement)
     {
-        //
+        $advertisement->update($request->only(['title', 'description']));
+        return redirect()->route('advertisements.show', ['advertisement' => $advertisement->id]);
     }
 
     /**
@@ -104,6 +105,7 @@ class AdvertisementController extends Controller
      */
     public function destroy(Advertisement $advertisement)
     {
-        //
+        $advertisement->delete();
+        return redirect('/');
     }
 }
