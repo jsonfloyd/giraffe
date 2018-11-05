@@ -1,6 +1,6 @@
 <header class="header">
     <div class="branding">
-        <h1 class="title">Giraffe.test <small>by Bilohlazov V.</small></h1>
+        <a href="/"><h1 class="title">Giraffe.test <small>by Bilohlazov V.</small></h1></a>
     </div>
     <nav class="menu">
         @auth

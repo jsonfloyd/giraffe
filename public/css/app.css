@@ -6257,6 +6257,11 @@ table {
  * @import "utilities/skew-transforms";
  */
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .header {
   background-color: #f1f5f8;
   display: -webkit-box;
@@ -6324,7 +6329,7 @@ table {
       align-content: center;
 }
 
-.list .card {
+.card {
   max-width: 30rem;
   border-radius: .25rem;
   overflow: hidden;
@@ -6337,7 +6342,7 @@ table {
   width: 100%;
 }
 
-.list .card .card-header {
+.card .card-header {
   background-color: #f1f5f8;
   font-size: .875rem;
   line-height: 1;
@@ -6367,7 +6372,7 @@ table {
   color: #606f7b;
 }
 
-.list .card .card-body {
+.card .card-body {
   color: #3d4852;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -6375,14 +6380,14 @@ table {
   padding-bottom: .5rem;
 }
 
-.list .card .card-body .card-title {
+.card .card-body .card-title {
   font-size: 1.25rem;
   font-weight: 600;
   color: #3d4852;
   line-height: 2;
 }
 
-.list .card .card-footer {
+.card .card-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6408,7 +6413,32 @@ table {
   border-color: #b8c2cc;
 }
 
-.list .card .card-footer .btn {
+.card .card-footer .controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card .card-footer .controls * {
+  margin-left: .25rem;
+  margin-right: .25rem;
+}
+
+.card .card-footer .btn {
   font-size: .875rem;
 }
 

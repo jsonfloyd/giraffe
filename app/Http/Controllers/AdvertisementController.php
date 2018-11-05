@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Advertisement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class AdvertisementController extends Controller
 {
@@ -13,8 +14,9 @@ class AdvertisementController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->except(['index', 'show']);
+        $this->middleware('can:create,App\Advertisement')->only(['create', 'store']);
         $this->middleware('can:update,advertisement')->only(['edit', 'update', 'destroy']);
-        $this->middleware('can:create,advertisement')->only(['create', 'store']);
+
     }
 
 
@@ -46,7 +48,18 @@ class AdvertisementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+        if($validator->fails())
+            return redirect()->route('advertisements.create')->withErrors($validator)->withInput();
+        $adv = new Advertisement();
+        $adv->title = $request->get('title');
+        $adv->description = $request->get('description');
+        if($request->user()->advertisements()->save($adv))
+            return redirect()->route('advertisements.show', ['advertisement' => $adv->id]);
+
     }
 
     /**

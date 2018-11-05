@@ -31,7 +31,7 @@ class AdvertisementPolicy
      */
     public function create(User $user)
     {
-       return Auth::check();
+       return true;
     }
 
     /**

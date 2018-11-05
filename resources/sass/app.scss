@@ -60,6 +60,10 @@
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
+a{
+  text-decoration: none;
+  color: inherit;
+}
 .header {
   @apply bg-grey-lighter flex flex-row flex-wrap items-center content-center justify-between py-3 px-4 text-grey-darkest;
   }
@@ -72,26 +76,32 @@
 }
 .list{
   @apply flex flex-col flex-wrap items-center content-center;
-  .card{
-    @apply max-w-sm rounded overflow-hidden shadow-lg mx-4 my-4 w-full;
-    .card-header{
-      @apply bg-grey-lighter text-sm leading-none border-b border-grey px-4 py-2 flex flex-row flex-wrap items-center content-center justify-between text-grey-darker;
+
+}
+.card{
+  @apply max-w-sm rounded overflow-hidden shadow-lg mx-4 my-4 w-full;
+  .card-header{
+    @apply bg-grey-lighter text-sm leading-none border-b border-grey px-4 py-2 flex flex-row flex-wrap items-center content-center justify-between text-grey-darker;
+  }
+  .card-body{
+    @apply text-grey-darkest px-4 py-2;
+    .card-title{
+      @apply text-xl font-semibold text-grey-darkest leading-loose;
     }
-    .card-body{
-      @apply text-grey-darkest px-4 py-2;
-      .card-title{
-        @apply text-xl font-semibold text-grey-darkest leading-loose;
+  }
+  .card-footer{
+    @apply flex flex-row flex-wrap items-center content-center justify-between px-8 py-4 border-t border-grey;
+    .controls{
+      @apply flex flex-row flex-wrap items-center content-center justify-between;
+      *{
+        @apply mx-1;
       }
     }
-    .card-footer{
-      @apply flex flex-row flex-wrap items-center content-center justify-between px-8 py-4 border-t border-grey;
-      .btn{
-        @apply text-sm;
-      }
+    .btn{
+      @apply text-sm;
     }
   }
 }
-
 .btn {
   @apply font-bold py-2 px-4 rounded border-solid border;
   text-decoration: none;

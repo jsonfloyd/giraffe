@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('content)
+@section('content')
     @php $isEditing = isset($advertisement) @endphp
     <main class="container mx-auto">
-        <form action="{{ $isEditing ? route('advertisements.update', ['id' => $advertisement->id]) : route('advertisements.create')}}"
+        <form action="{{ $isEditing ? route('advertisements.update', ['id' => $advertisement->id]) : route('advertisements.store')}}"
               method="POST">
             @if($isEditing)
                 @method('PUT')

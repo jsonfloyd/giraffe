@@ -1,17 +1,13 @@
 @extends('layouts.app')
 @section('content')
-    <main class="container mx-auto">
+    <main class="container mx-auto mt-4">
+        <div class="create-new text-center">
+            <a href="{{route('advertisements.create')}}" class="btn btn-primary">Create</a>
+        </div>
         <div class="list">
-
-
-            {{--@foreach($advertisements as $advertisement)--}}
-            @include('advertisement.item')
-            @include('advertisement.item')
-            @include('advertisement.item')
-            @include('advertisement.item')
-            @include('advertisement.item')
-            {{--@endforeach--}}
+            @foreach($advertisements as $advertisement)
+                @include('advertisement.item', ['advertisement' => $advertisement])
+            @endforeach
         </div>
     </main>
-
 @endsection

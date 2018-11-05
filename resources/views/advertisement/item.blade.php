@@ -14,8 +14,8 @@
     <div class="card-footer">
         <div class="controls">
             @can('update', $advertisement)
-                <a href="{{route('advertisements.edit', ['advertisement' => 1])}}" class="btn btn-success">Edit</a>
-                <form action="{{route('advertisements.edit', ['advertisement' => 1])}}"
+                <a href="{{route('advertisements.edit', ['advertisement' => $advertisement->id])}}" class="btn btn-success">Edit</a>
+                <form action="{{route('advertisements.edit', ['advertisement' => $advertisement->id])}}"
                       method="POST">
                     @csrf
                     @method('DELETE')
@@ -24,7 +24,7 @@
             @endcan
         </div>
         <div class="details">
-            <a href="{{route('advertisements.show', ['advertisement' => 1])}}" class="btn btn-primary">Details</a>
+            <a href="{{route('advertisements.show', ['advertisement' => $advertisement->id])}}" class="btn btn-primary">Details</a>
         </div>
 
     </div>
