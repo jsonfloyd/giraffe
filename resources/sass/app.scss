@@ -88,6 +88,9 @@ a{
     .card-title{
       @apply text-xl font-semibold text-grey-darkest leading-loose;
     }
+    p{
+      overflow-wrap: break-word;
+    }
   }
   .card-footer{
     @apply flex flex-row flex-wrap items-center content-center justify-between px-8 py-4 border-t border-grey;
@@ -134,4 +137,25 @@ a{
 
 .btn-destroy:hover {
   @apply bg-red-dark text-white;
+}
+.pagination{
+  @apply list-reset flex flex-row justify-center;
+  .page-item{
+    @apply mx-2;
+    .page-link{
+      @apply text-blue;
+    }
+    .page-link:hover{
+      @apply text-blue-darker;
+      text-decoration:underline;
+    }
+    &.disabled .page-link{
+      @apply text-grey;
+      pointer-events: none;
+    }
+    &.active .page-link{
+      @apply font-bold text-blue-darker;
+      pointer-events: none;
+    }
+  }
 }

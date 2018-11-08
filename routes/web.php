@@ -11,7 +11,7 @@
 |
 */
 Route::get('/', function () {
-    return view('advertisement.list')->with('advertisements', App\Advertisement::paginate(5));
+    return view('advertisement.list')->with('advertisements', App\Advertisement::orderBy('created_at', 'DESC')->paginate(5));
 
 });
 

@@ -49,8 +49,8 @@ class AdvertisementController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'title' => 'required',
-            'description' => 'required'
+            'title' => 'required|max:255',
+            'description' => 'required|max:2000'
         ]);
         if($validator->fails())
             return redirect()->route('advertisements.create')->withErrors($validator)->withInput();

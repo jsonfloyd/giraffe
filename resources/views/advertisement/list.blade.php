@@ -10,4 +10,7 @@
             @endforeach
         </div>
     </main>
+    <nav class="container mx-auto mt-4">
+        {{ $advertisements->links() }}
+    </nav>
 @endsection

@@ -6387,6 +6387,10 @@ a {
   line-height: 2;
 }
 
+.card .card-body p {
+  overflow-wrap: break-word;
+}
+
 .card .card-footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6496,6 +6500,46 @@ a {
 .btn-destroy:hover {
   background-color: #cc1f1a;
   color: #fff;
+}
+
+.pagination {
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pagination .page-item {
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
+.pagination .page-item .page-link {
+  color: #3490dc;
+}
+
+.pagination .page-item .page-link:hover {
+  color: #1c3d5a;
+  text-decoration: underline;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #b8c2cc;
+  pointer-events: none;
+}
+
+.pagination .page-item.active .page-link {
+  font-weight: 700;
+  color: #1c3d5a;
+  pointer-events: none;
 }
 
 @media (min-width: 576px) {
